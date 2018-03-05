@@ -22,6 +22,7 @@ ballIMG.src = "circle1.gif"
 
 $(document).keypress(function(e){
   var keyCode = e.keyCode;
+  console.log(keyCode);
   //UP
   if (keyCode==119 || keyCode == 87 || keyCode == 38) {
     ball.yV -=4;
@@ -42,9 +43,10 @@ $(document).keypress(function(e){
     ball.xV +=4;
   }
 
-  if (keyCode==82) {
-    ball.xV =0;
-    ball.xy =0;
+  if (keyCode==114) {
+    ball.xV = 0;
+    ball.xy = 0;
+    console.log("STOPPED");
   }
 })
 

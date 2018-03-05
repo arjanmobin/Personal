@@ -155,6 +155,7 @@ function randomInt(min, max) {
 
 $(document).keypress(function(e){
   var keyCode = e.keyCode;
+  console.log(keyCode);
   //UP
   if (direction!= "d" && keyCode==119 || keyCode == 87 || keyCode == 38) {
     direction = "u";
@@ -211,4 +212,90 @@ var timer = setInterval(function(){
       }
     }
   }
-}, 100);
+
+    //PLAY SELF
+    //MOVE UP
+
+
+  for(var i=1; i<snake.length; i++){
+    if (direction = "u"){
+
+    }
+
+    if (direction = "d"){
+        if(snake[0].y == snake[i].y){
+            if(snake[0].x+1 == snake[i].x){
+                direction = "r";
+            }
+            else{
+              direction = "l"
+            }
+        }
+    }
+
+    if (direction = "l"){
+        if(snake[0].x == snake[i].x){
+          if(snake[0].y-1 == snake[i].y){
+            direction = "u";
+          }
+          else{
+            direction = "d";
+          }
+
+        }
+    }
+
+    if (direction = "r"){
+        if(snake[0].x == snake[i].x){
+            if(snake[0].y-1 == snake[i].y){
+                direction = "u";
+            }
+            else{
+                direction = "d";
+            }
+        }
+    }
+
+
+  }
+
+    if(snake[0].y>food.y){
+        direction = "u";
+        for( var i=0; i<snake.length; i++){
+            if(snake[0].y == snake[i].y){
+                if(snake[0].x+1 == snake[i].x){
+                    direction = "r";
+                }
+                else{
+                    direction = "l";
+                }
+            }
+        }
+    }
+    else if (snake[0].y <food.y){
+        direction = "d";
+        for( var i=0; i<snake.length; i++){
+            if(snake[0].y == snake[i].y){
+                if(snake[0].x+1 == snake[i].x){
+                    direction = "r";
+                }
+                else{
+                    direction = "l"
+                }
+            }
+        }
+    }
+    else{
+        //LEFT RIGHT
+        if(snake[0].x<food.x){
+            direction = "r";
+        }
+        else {
+            direction = "l";
+        }
+    }
+
+
+
+
+}, 1);

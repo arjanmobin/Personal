@@ -9,24 +9,28 @@ function draw() {
   background(200);
   stroke(126);
   translate(width/2, height);
-  branch(300, angle);
+  setInterval(function(){
+    for(var i=0; i<PI/4; i+=.1){
+      branch(300, i);
+    }
+  }, 400)
 }
 
 function branch(len, angle){
-  strokeWeight(4);
-  stroke(0);
+  strokeWeight(3);
+  stroke(277, 432, 523);
   line(0,0,0,-len);
   translate(0, -len);
 
   push();
   rotate(-angle);
   if (len>5) {
-    branch(len*0.7, angle);
+    branch(len*0.65, angle);
   }
   pop();
 
   rotate(angle);
   if (len>5) {
-    branch(len*0.7, angle);
+    branch(len*0.65, angle);
   }
 }
