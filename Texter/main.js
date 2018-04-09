@@ -81,11 +81,7 @@ function draw(){
         let d = mouseVec.mag();
 
         let force = map(d, 0, 300, 1000, 0, true);
-
         
-        if(rando==1){
-            force*=-1;
-        }
 
         particles[i].acc = mouseVec.mult(force/100000);
 
