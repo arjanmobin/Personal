@@ -8,6 +8,7 @@ var inputText;
 var fontSize = 250;
 
 
+
 function preload(){
     gunk = loadFont("Machine-Gunk.otf");
 }
@@ -78,7 +79,9 @@ function draw(){
         let force = map(d, 0, 300, 1000, 0, true);
 
 
-
+        if(random(0,1)==1){
+            force*=-1;
+        }
         particles[i].acc = mouseVec.mult(force/100000);
         particles[i].acc.add(homeVec.mult(.001));
 
