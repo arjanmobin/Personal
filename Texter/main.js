@@ -9,7 +9,7 @@ var fontSize = 250;
 
 
 function preload(){
-    gunk = loadFont("Machine-Gunk.otf");
+    gunk = loadFont("with.otf");
 }
 
 function setup() {
@@ -75,7 +75,7 @@ function draw(){
 
         let d = mouseVec.mag();
 
-        let force = map(d, 0, 180, 1, 0, true);
+        let force = map(d, 0, 100, 1, 0, true);
 
 
 
