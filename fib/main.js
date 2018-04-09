@@ -1,38 +1,55 @@
+var sf;
+
 function setup() {
-    createCanvas(1265*2,2*630);
-    translate(65*width/89, 40*height/55);
-    background(200);
+
+    createCanvas(1200,720);
+    // background(0,0,0);
+    sf = width/89;
+
+    translate(65*sf,40*sf);
     strokeWeight(4);
     point(0,0);
 }
-
-var sf = 20;
-var fib = [1,1];
-for (let i=1; i<40; i++){
-    fib[i+1] = fib[i-1]+fib[i];
-}
+fib = [1,1];
+for(var i=2; i< 25; i++){
+    fib[i] = fib[i-1]+fib[i-2];
+};
 
 
+var a = .05;
 
 function draw() {
-    translate(65*width/89, 40*height/55);
-    noLoop()
-    for (let i=0; i<100; i++){
-        k=fib[i];
-        console.log(k)
-        noFill();
-        stroke(i,i,i)
-        arc(-k*sf,0,2*k*sf, 2*k*sf, 3*PI/2 ,0);
+    background(255)
+    translate(65*sf,40*sf);
+    strokeWeight(1)
+    noFill()
+    frameRate(60);
 
 
-        line(0,0,0, -k*sf);
-        translate(0,-k*sf);
-        rotate(-PI/2);
-        line(0,0,0, -k*sf);
-        translate(0, -k*sf);
-
+    for(var i=0; i<10; i++){
+        rect(0,0,-fib[i]*sf,-fib[i]*sf);
+        arc(0-fib[i]*sf,0,2*fib[i]*sf,2*fib[i]*sf, 3*PI/2,2*PI);
+        translate(-fib[i]*sf,-fib[i]*sf);
+        rotate(a+(3*PI/2));
 
     }
+
+
+    if(a>0){
+        a+=.01;
+    }else{
+        a-=.01;
+    }
+
+
+    if(a>PI || a<0){
+        a*=-1;
+    }
+
+
+
+
+
 
 
 }
