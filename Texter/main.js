@@ -79,16 +79,15 @@ function draw(){
 
         let force = map(d, 0, 300, 1000, 0, true);
 
-
-<<<<<<< HEAD
+        
         if(random(0,1)==1){
             force*=-1;
         }
         particles[i].acc = mouseVec.mult(force/100000);
-=======
+
 
         particles[i].acc = mouseVec.mult(-force/100000);
->>>>>>> a28b8607245e2595efda990378b2ecfe46eed048
+
         particles[i].acc.add(homeVec.mult(.001));
 
         particles[i].vel.mult(.98);
