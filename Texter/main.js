@@ -19,7 +19,9 @@ function setup() {
     textFont(gunk);
     textSize(fontSize);
 
-    inputText = createInput("");
+    inputText = createInput("Sup");
+    inputText.position(25,30);
+
 
 
     pts = gunk.textToPoints("DEFAULT", 0 , 0);
@@ -31,7 +33,6 @@ function setup() {
 function draw(){
 
     background(0);
-
 
 
     inputText.input(function(){
@@ -79,10 +80,15 @@ function draw(){
         let force = map(d, 0, 300, 1000, 0, true);
 
 
+<<<<<<< HEAD
         if(random(0,1)==1){
             force*=-1;
         }
         particles[i].acc = mouseVec.mult(force/100000);
+=======
+
+        particles[i].acc = mouseVec.mult(-force/100000);
+>>>>>>> a28b8607245e2595efda990378b2ecfe46eed048
         particles[i].acc.add(homeVec.mult(.001));
 
         particles[i].vel.mult(.98);
