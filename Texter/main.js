@@ -7,6 +7,8 @@ var inputText;
 
 var fontSize = 250;
 
+var rando;
+
 
 
 function preload(){
@@ -14,6 +16,7 @@ function preload(){
 }
 
 function setup() {
+    rando = random(0,1);
     background(255,255,255);
     createCanvas(1200,650);
     textFont(gunk);
@@ -80,9 +83,10 @@ function draw(){
         let force = map(d, 0, 300, 1000, 0, true);
 
         
-        if(random(0,1)==1){
+        if(rando==1){
             force*=-1;
         }
+
         particles[i].acc = mouseVec.mult(force/100000);
 
 
