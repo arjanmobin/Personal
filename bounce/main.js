@@ -18,7 +18,7 @@ var ball = {
 var backColor = "blue";
 
 var ballIMG = new Image(100, 100);
-ballIMG.src = "circle1.gif"
+ballIMG.src = "circle.gif"
 
 $(document).keypress(function(e){
   var keyCode = e.keyCode;
