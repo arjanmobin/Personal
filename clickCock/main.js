@@ -41,10 +41,6 @@ function dick(x, y, a, c, ballRadius, shaftHeight, shaftWidth, tipWidth){
 
     push();
     translate(x,y);
-    // // a = random(0,2*PI);
-    // rotate(a);
-    console.log("DICK");
-
 
     fill(c);
 
