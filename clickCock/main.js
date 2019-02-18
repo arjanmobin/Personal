@@ -39,7 +39,8 @@ function draw(){
 
 function dick(x, y, a, c, ballRadius, shaftHeight, shaftWidth, tipWidth){
 
-    //translate(x,y);
+    push();
+    translate(x,y);
     // // a = random(0,2*PI);
     // rotate(a);
     console.log("DICK");
@@ -57,6 +58,6 @@ function dick(x, y, a, c, ballRadius, shaftHeight, shaftWidth, tipWidth){
 
 
     arc(0,0, tipWidth, tipWidth*2, PI, 2*PI);
-
+    pop();
 
 }
