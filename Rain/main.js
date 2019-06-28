@@ -20,6 +20,10 @@ function draw() {
 	textSize(25)
 	text("SCORE: " + score, 100, 900)
 
+	if (mouseX < 0 | mouseX > 1905 | mouseY < 0 | mouseY > 900) {
+		endGame()
+	}
+	
 	if ((boxes.length < (10 + (score / 20))) && boxes.length < 75) {
 
 		if (score > 300 && score % 2 == 0) {
