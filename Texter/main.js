@@ -69,7 +69,7 @@ function draw(){
 
     for(var i=0; i<particles.length; i++){
 
-        let mouseVec = createVector(mouseX-particles[i].pos.x, mouseY-particles[i].pos.y);
+        let mouseVec = createVector(mouseX-particles[i].pos.x, mouseY-particles[i].pos.y).mult(5);
 
         let homeVec = createVector(particles[i].target.x-particles[i].pos.x, particles[i].target.y-particles[i].pos.y);
 
